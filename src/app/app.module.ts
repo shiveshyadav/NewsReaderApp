@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NewsListComponent } from './modules/dashboard/news-list/news-list.component';
+import { HomeModule } from './modules/dashboard/home.module';
+import { NewsService } from './store/service/newsreader.service'
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    routingComponents,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

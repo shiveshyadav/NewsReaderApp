@@ -1,0 +1,19 @@
+<div *ngFor="let news of newsList">
+   <div *ngIf=(news)>
+    <div class="container" style="margin-top:30px">
+            
+        <div class="card" style="width: 50rem;">
+            <img class="card-img-top" src="{{news.urlToImage}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{news?.title}}</h5>
+                <p class="card-text">{{news?.content}}</p>
+                <a href={{news.url}} class="card-link" target="_blank">...readmore</a>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Author : {{news?.author}}</li>
+                <li class="list-group-item">Published At : {{news?.publishedAt | date: 'dd-MMM-yyyy'}}</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>

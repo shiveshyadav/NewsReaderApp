@@ -1,0 +1,39 @@
+<h4 class='homeHeader'>{{title}}</h4>
+ 
+<ul class="nav nav-tabs">
+    <div *ngFor="let category of categoryList">
+        <li class="nav-item">
+            <button [ngClass]="category.active ? 'nav-link active' : 'nav-link'"
+                (click)="passCategoryValuetoService(category,categoryList)">{{category.name}}</button>
+        </li>
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search News" aria-label="Search"
+            (input)="searchNews($event.target.value)">
+    </form>
+    <div class="dropdown" id="sortby">
+        <select (change)="sortResults($event.target.value)" >
+            <option class="dropdown-content" *ngFor="let sort of sorting" value={{sort}}>{{sort}}</option>
+        </select>
+    </div>
+
+    <div class="dropdown" id="page">
+        <select (change)="changePageSize($event.target.value)">
+            <option *ngFor="let page of paging" value={{page}}>{{page}}</option>
+        </select>
+    </div>
+</ul>
+
+<ul class="nav nav-tabs">
+    <div *ngFor="let country of countryList">
+        <li class="nav-item">
+            <button [ngClass]="country.active ? 'nav-link active' : 'nav-link'"
+                (click)="passCountryValuetoService(country,countryList)">{{country.name}}</button>
+        </li>
+    </div>
+</ul>
+
+
+<div class='newsDahsboard'>
+    <news-list [newsList]="news"></news-list>
+</div>

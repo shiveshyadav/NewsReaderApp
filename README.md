@@ -1,4 +1,10 @@
-# Lotus
+# NewsReaderApp
+
+App have feature to select news by category, country.
+User can search the news.
+User can change the page size.
+User can change the sorting.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 

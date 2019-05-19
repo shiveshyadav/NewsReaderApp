@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Lotus": {
+    "NewsReaderApp": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Lotus",
+            "outputPath": "dist/NewsReaderApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -61,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Lotus:build"
+            "browserTarget": "NewsReaderApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Lotus:build:production"
+              "browserTarget": "NewsReaderApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Lotus:build"
+            "browserTarget": "NewsReaderApp:build"
           }
         },
         "test": {
@@ -106,7 +107,7 @@
         }
       }
     },
-    "Lotus-e2e": {
+    "NewsReaderApp-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Lotus:serve"
+            "devServerTarget": "NewsReaderApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Lotus:serve:production"
+              "devServerTarget": "NewsReaderApp:serve:production"
             }
           }
         },
@@ -135,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "Lotus"
+  "defaultProject": "NewsReaderApp"
 }
